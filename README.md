@@ -12,6 +12,7 @@
 - Preview siren flash timing, colours, headlights, and taillights in Blender
 - Auto rebuild the siren preview timeline when preview settings change
 - Apply siren hidden/shown scale states and restore default transforms from a tools panel
+- Check GitHub for updates and install the latest addon zip from inside Blender
 - Swap two linked sirens without changing their configuration rows
 
 ## Blender Panels
@@ -26,6 +27,7 @@ Main sections:
 - `Car Functions`
 - `Useful Tools`
 - `Simulation Preview`
+- `Updates`
 
 ## Installation
 1. Open Blender.
@@ -219,6 +221,22 @@ Main actions:
 - `Generate All Sirens Preview`
 
 Enable `Auto Rebuild Timeline` if you want preview-affecting changes to clear and regenerate the timeline automatically.
+
+## Updates
+Use the `Updates` panel in Blender to manage addon updates from the GitHub repository.
+
+Main actions:
+- `Check for Updates`
+- `Install Update`
+- `Open GitHub Repo`
+
+The panel also shows:
+- current installed version
+- latest version found on GitHub
+- last checked time
+- whether a Blender restart is required after installation
+
+Enable `Check for Updates on Startup` if you want the add-on to notify you when a newer version is available.
 
 ## Detailed Documentation
 More detailed GitHub Wiki-ready pages are available in [wiki/Home.md](wiki/Home.md).
