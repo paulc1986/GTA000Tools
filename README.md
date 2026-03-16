@@ -10,6 +10,8 @@
 - Configure up to 32 sirens
 - Link sirens to scene meshes and armature bones
 - Preview siren flash timing, colours, headlights, and taillights in Blender
+- Auto rebuild the siren preview timeline when preview settings change
+- Apply siren hidden/shown scale states and restore default transforms from a tools panel
 - Swap two linked sirens without changing their configuration rows
 
 ## Blender Panels
@@ -22,6 +24,7 @@ Main sections:
 - `Flash Patterns Library`
 - `Colours`
 - `Car Functions`
+- `Useful Tools`
 - `Simulation Preview`
 
 ## Installation
@@ -42,8 +45,9 @@ Main sections:
 4. Add the required siren count.
 5. Configure each siren.
 6. Link each siren to its mesh and bone.
-7. Use the preview tools to check timing, pattern, and colour.
-8. Export `carcols.meta`.
+7. Use `Useful Tools` to set siren scale states, copy a centred origin from a helper object, or reset siren transforms.
+8. Use the preview tools to check timing, pattern, and colour.
+9. Export `carcols.meta`.
 
 ## Lightbar Configuration
 Use this section for vehicle-wide settings.
@@ -153,6 +157,22 @@ Main actions:
 
 If a siren has a mesh but no linked bone, the add-on shows an inline warning in the siren settings.
 
+## Useful Tools
+Use this section for scene-side siren helpers that are not part of the preview timeline controls.
+
+Main actions:
+- `Set Siren Scale (Off)`
+- `Set Siren Scale (On)`
+- `Set Origin to Selected Object`
+- `Reset Active Siren`
+- `Reset All Sirens`
+
+`Set Siren Scale (Off)` and `Set Siren Scale (On)` apply the configured hidden or shown state to the working siren. If the siren list selection does not match, the add-on can resolve the siren from the active object.
+
+`Set Origin to Selected Object` copies the origin from a separate helper object onto the working siren mesh while keeping the visible siren geometry in place.
+
+`Reset Active Siren` and `Reset All Sirens` restore the stored default transforms after preview playback or manual testing.
+
 ## Importing `carcols.meta`
 Importing a `carcols.meta` file can populate:
 - vehicle name
@@ -185,6 +205,20 @@ This section includes scene-side helpers for:
 - extras visibility
 
 These controls are intended for viewport simulation only.
+
+## Simulation Preview
+Use this section to simulate sirens in the scene and generate timeline keyframes.
+
+Main actions:
+- `Simulate Siren Off`
+- `Simulate Siren On`
+- `Simulate All Sirens Off`
+- `Simulate All Sirens On`
+- `Clear Timeline`
+- `Generate Individual Siren Preview`
+- `Generate All Sirens Preview`
+
+Enable `Auto Rebuild Timeline` if you want preview-affecting changes to clear and regenerate the timeline automatically.
 
 ## Detailed Documentation
 More detailed GitHub Wiki-ready pages are available in [wiki/Home.md](wiki/Home.md).
