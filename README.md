@@ -186,6 +186,9 @@ This section includes scene-side helpers for:
 
 These controls are intended for viewport simulation only.
 
+## Detailed Documentation
+More detailed GitHub Wiki-ready pages are available in [wiki/Home.md](wiki/Home.md).
+
 ## Notes
 - The add-on is designed around GTA V non-ELS siren workflows.
 - Imported patterns and colours can be saved back into the library for reuse.
