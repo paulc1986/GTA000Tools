@@ -9,6 +9,7 @@
 - Manage reusable flash pattern and colour libraries
 - Configure up to 32 sirens
 - Link sirens to scene meshes and armature bones
+- Configure bonnet, boot, standard door, and sliding door helpers with captured open/closed states
 - Preview siren flash timing, colours, headlights, and taillights in Blender
 - Auto rebuild the siren preview timeline when preview settings change
 - Apply siren hidden/shown scale states and restore default transforms from a tools panel
@@ -24,6 +25,7 @@ Main sections:
 - `Lightbar Configuration`
 - `Flash Patterns Library`
 - `Colours`
+- `Body Openings`
 - `Car Functions`
 - `Useful Tools`
 - `Simulation Preview`
@@ -47,9 +49,10 @@ Main sections:
 4. Add the required siren count.
 5. Configure each siren.
 6. Link each siren to its mesh and bone.
-7. Use `Useful Tools` to set siren scale states, copy a centred origin from a helper object, or reset siren transforms.
-8. Use the preview tools to check timing, pattern, and colour.
-9. Export `carcols.meta`.
+7. Configure body openings if the vehicle needs bonnet, boot, or door setup.
+8. Use `Useful Tools` to set siren scale states, copy a centred origin from a helper object, or reset siren transforms.
+9. Use the preview tools to check timing, pattern, and colour.
+10. Export `carcols.meta`.
 
 ## Lightbar Configuration
 Use this section for vehicle-wide settings.
@@ -245,3 +248,16 @@ More detailed GitHub Wiki-ready pages are available in [wiki/Home.md](wiki/Home.
 - The add-on is designed around GTA V non-ELS siren workflows.
 - Imported patterns and colours can be saved back into the library for reuse.
 - If Blender UI previews stop updating after large changes, use `Refresh Pattern Previews`.
+
+## Body Openings
+Use the `Body Openings` panel for bonnet, boot, hinged doors, and sliding doors.
+
+Each opening lets you:
+- assign the mesh
+- place a linked bone on the parent skeleton
+- choose hinged or sliding behavior
+- select which rotation or slide axes are active
+- capture `Closed` and `Open` states from the current manual transform
+- preview either captured state back onto the linked mesh or bone
+
+Placed body-opening bones always point toward vehicle front (`Y+`).
