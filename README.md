@@ -1,35 +1,50 @@
 # GTA 000 Tools
 
-`GTA 000 Tools` is a Blender add-on for building, previewing, importing, and exporting GTA V non-ELS siren configurations.
+`GTA 000 Tools` is a Blender add-on for building GTA V non-ELS lightbar setups, managing grouped asset libraries, previewing linked scene content, and exporting `carcols.meta` data.
 
-## Features
-- Build non-ELS lightbar configurations in Blender
-- Import existing `carcols.meta` files
-- Export finished `carcols.meta` files
+## What The Add-on Does
+- Build full non-ELS lightbar setups inside Blender
+- Import existing `carcols.meta` files and continue editing them
+- Export updated `carcols.meta` files
 - Manage reusable flash pattern and colour libraries
 - Configure up to 32 sirens
-- Link sirens to scene meshes and armature bones
-- Configure bonnet, boot, standard door, and sliding door helpers with captured open/closed states
-- Preview siren flash timing, colours, headlights, and taillights in Blender
-- Auto rebuild the siren preview timeline when preview settings change
-- Apply siren hidden/shown scale states and restore default transforms from a tools panel
-- Check GitHub for updates and install the latest addon zip from inside Blender
-- Swap two linked sirens without changing their configuration rows
+- Link sirens, doors, bonnet, boot, and other scene parts to armature bones
+- Preview lightbar behaviour in Blender without leaving the scene
+- Manage a grouped asset library with search, tags, categories, thumbnails, Append, and Link tools
+- Use Sollumz-dependent helpers for wheel preview and polygon Light ID workflows when Sollumz is installed
 
-## Blender Panels
-The add-on appears in the 3D View sidebar under:
-- `Tool`
-- `GTA 000`
+## Panel Layout
+The add-on can appear in the `GTA 000` tab, the `Tool` tab, or both depending on Preferences.
 
-Main sections:
-- `Lightbar Configuration`
-- `Flash Patterns Library`
-- `Colours`
-- `Body Openings`
-- `Car Functions`
+### General
+- `Lightbar Setup`
+- `Simulation`
 - `Useful Tools`
-- `Simulation Preview`
+
+### Vehicle
+- `Body Openings`
+- `Extra's`
+- `Lighting`
+- `Light ID's`
+- `Wheel Preview`
+
+### Asset Library
+- `Asset's`
+- `Asset Details`
+
+### Config Libraries
+- `Lightbars`
+  - `Flash Patterns`
+  - `Colours`
+- `Assets`
+  - `Categories`
+  - `Sub-Categories`
+  - `Tags`
+
+### Updates and Information
 - `Updates`
+- `Asset Library Path`
+- `Information`
 
 ## Installation
 1. Open Blender.
@@ -38,226 +53,90 @@ Main sections:
 4. Select `gta000tools.zip`.
 5. Enable `GTA 000 Tools`.
 
-## Basic Workflow
-1. Set the main lightbar values:
-   - `vehicle_name`
-   - `siren_id`
-   - `BPM`
-   - `Scale Factor`
-2. Build or edit the flash pattern library.
-3. Build or edit the colour library.
-4. Add the required siren count.
+## Optional Sollumz Integration
+Sollumz is not required for the main lightbar workflow, but it is useful for some vehicle tools.
+
+With Sollumz installed and enabled you can:
+- use `Preview Wheel Instances`
+- work with polygon `Light ID's` in a Sollumz-style workflow
+- use some fragment and vehicle scene helpers more reliably
+
+If Sollumz is missing or disabled, GTA 000 Tools shows a warning and gives you an install or enable button.
+
+## Quick Start
+### Lightbar Workflow
+1. Open `General > Lightbar Setup`.
+2. Set `vehicle_name`, `siren_id`, `BPM`, and `Scale Factor`.
+3. Set headlight and taillight patterns if needed.
+4. Add sirens from `Siren Actions`.
 5. Configure each siren.
 6. Link each siren to its mesh and bone.
-7. Configure body openings if the vehicle needs bonnet, boot, or door setup.
-8. Use `Useful Tools` to set siren scale states, copy a centred origin from a helper object, or reset siren transforms.
-9. Use the preview tools to check timing, pattern, and colour.
-10. Export `carcols.meta`.
+7. Use `Simulation` to preview the active siren or all sirens.
+8. Export `carcols.meta` when the setup is ready.
 
-## Lightbar Configuration
-Use this section for vehicle-wide settings.
+### Asset Library Workflow
+1. Add library roots in Preferences or in `Updates and Information > Asset Library Path`.
+2. Scan the libraries.
+3. Browse assets in `Asset Library > Asset's`.
+4. Use filters, view mode, and sort mode to narrow the list.
+5. `Append`, `Link`, or select an asset to inspect it in `Asset Details`.
 
-Key fields:
-- `vehicle_name`: exported to `<name>` in `carcols.meta`
-- `siren_id`: exported to `<id value="..."/>`
-- `BPM`: master timing for flash previews and siren timing
-- `Scale Factor`: shared hidden-scale factor for the setup
-- `Headlight Flash Patterns`: left and right headlight patterns
-- `Taillight Flash Patterns`: left and right taillight patterns
+### Vehicle Workflow
+1. Use `Vehicle > Lighting` to preview headlights, indicators, taillights, and extra lights.
+2. Use `Vehicle > Light ID's` in `Edit Mode > Face Select` to assign or select polygon Light IDs.
+3. Use `Vehicle > Body Openings` to configure bonnet, boot, and door movement.
+4. Use `Vehicle > Extra's` to show or hide extras.
+5. Use `Vehicle > Wheel Preview` if Sollumz is installed.
 
-If the preview swatches stop updating after import or heavy edits, use `Refresh Pattern Previews`.
+## Preferences
+Open `Edit > Preferences > Add-ons > GTA 000 Tools`.
 
-## Flash Patterns Library
-Use this section to manage reusable flash patterns.
+Important settings:
+- `Panel Location`: show panels in `GTA 000`, `Tool`, or both
+- `Icon Colour Mode`: `Default`, `Light`, or `Dark`
+- `Alpha Features > Rotators`: show or hide rotator setup controls
+- `Asset Preview Size (px)`: target preview size for Asset Library thumbnails
+- `Asset Library` settings: library roots, grouping mode, auto refresh, preview generation
 
-Each pattern stores:
-- `name`
-- `bits` as a 32-bit sequence
-- `sequencer` value
+## Helpful Built-in Tools
+### Useful Tools
+- Set scale on or off for the working siren
+- Duplicate or renumber a siren
+- Match origin to another object
+- Set origins to bones
+- Move linked bones to origins
+- Reset active or all sirens back to stored defaults
 
-Available actions:
-- add
-- duplicate
-- remove
-- repeat a shorter pattern to 32 bits
-- generate the opposite pattern
-- import the pattern library
-- export the pattern library
+### Right-click Menu
+A `GTA 000 Tools` submenu is added to the viewport context menu.
 
-If an imported siren pattern does not already exist in the library, it will appear as `Unsaved Pattern`. You can save it to the library from the siren settings.
+Depending on mode, it can include:
+- origin tools
+- bone tools
+- mesh assignment tools
+- Light ID tools in `Edit Mode > Face Select`
 
-## Colours
-Use this section to manage reusable siren colours.
-
-Included defaults cover common emergency-light colours such as:
-- amber
-- blue
-- red
-- white
-- green
-- pink
-- purple
-- no colour
-
-You can also add custom colours and use them directly on sirens.
-
-## Non-ELS Sirens
-Each siren row shows:
-- status icon
-- siren name
-- live preview swatch
-
-Status icon meaning:
-- `Light`: mesh and bone are linked correctly
-- `Error`: one or more required links are missing
-
-Hover the error icon to see what is missing.
-
-### Siren Actions
-From `Siren Actions` you can:
-- add 20 sirens
-- add 32 sirens
-- add sirens 21-32
-- remove sirens 21-32
-- remove all sirens
-- swap two linked sirens
-
-### Siren Swap
-`Swap Two Sirens` lets you pick two sirens that already have a linked mesh and bone.
-
-It swaps the physical scene assets only:
-- mesh names are swapped
-- bone names are swapped
-- child bone links are updated
-
-The siren configuration rows stay in place.
-
-Use this when the correct light is in the wrong siren slot.
-
-## Siren Configuration
-For each siren you can configure:
-- `siren_type`: `Flasher` or `Rotator`
-- `Pattern`
-- `Colour`
-- `Flash Preview`
-- `Direction`
-- `sync_to_bpm`
-- advanced lighting values
-
-### Flashers
-Flashers use a selected flash pattern from the library, or `Unsaved Pattern` if the imported pattern is not yet saved.
-
-### Rotators
-Rotators use BPM-based speed options and support clockwise or anti-clockwise rotation.
-
-## Object/Bone Linking
-Each siren can be linked to:
-- a mesh object
-- a siren bone on an armature
-
-Main actions:
-- `Auto-Detect Sirens/Bones`
-- `Assign Selected Object to Siren`
-- `Place Bone at Selected Origin`
-
-If a siren has a mesh but no linked bone, the add-on shows an inline warning in the siren settings.
-
-## Useful Tools
-Use this section for scene-side siren helpers that are not part of the preview timeline controls.
-
-Main actions:
-- `Set Siren Scale (Off)`
-- `Set Siren Scale (On)`
-- `Set Origin to Selected Object`
-- `Reset Active Siren`
-- `Reset All Sirens`
-
-`Set Siren Scale (Off)` and `Set Siren Scale (On)` apply the configured hidden or shown state to the working siren. If the siren list selection does not match, the add-on can resolve the siren from the active object.
-
-`Set Origin to Selected Object` copies the origin from a separate helper object onto the working siren mesh while keeping the visible siren geometry in place.
-
-`Reset Active Siren` and `Reset All Sirens` restore the stored default transforms after preview playback or manual testing.
-
-## Importing `carcols.meta`
-Importing a `carcols.meta` file can populate:
-- vehicle name
-- siren ID
-- BPM
-- headlight and taillight patterns
-- siren flash or rotator settings
-- colours
-- advanced siren values
-- scale factor
-
-If imported preview swatches appear stuck, use `Refresh Pattern Previews`.
-
-## Exporting `carcols.meta`
-The add-on can export a game-ready `carcols.meta` using the current Blender configuration.
-
-Export includes:
-- vehicle-wide settings
-- headlight and taillight flash patterns
-- active siren values
-- default inactive siren entries where required
-- siren number comments in the output
-
-## Car Functions
-This section includes scene-side helpers for:
-- headlights
-- taillights
-- indicators
-- extra lights
-- extras visibility
-
-These controls are intended for viewport simulation only.
-
-## Simulation Preview
-Use this section to simulate sirens in the scene and generate timeline keyframes.
-
-Main actions:
-- `Simulate Siren Off`
-- `Simulate Siren On`
-- `Simulate All Sirens Off`
-- `Simulate All Sirens On`
-- `Clear Timeline`
-- `Generate Individual Siren Preview`
-- `Generate All Sirens Preview`
-
-Enable `Auto Rebuild Timeline` if you want preview-affecting changes to clear and regenerate the timeline automatically.
-
-## Updates
-Use the `Updates` panel in Blender to manage addon updates from the GitHub repository.
-
-Main actions:
-- `Check for Updates`
-- `Install Update`
-- `Open GitHub Repo`
-
-The panel also shows:
-- current installed version
-- latest version found on GitHub
-- last checked time
-- whether a Blender restart is required after installation
-
-Enable `Check for Updates on Startup` if you want the add-on to notify you when a newer version is available.
-
-## Detailed Documentation
-More detailed GitHub Wiki-ready pages are available in [wiki/Home.md](wiki/Home.md).
+## Documentation
+Wiki pages in this repository:
+- [Home](wiki/Home.md)
+- [Installation and Setup](wiki/01-Installation-and-Setup.md)
+- [Quick Start](wiki/02-Quick-Start.md)
+- [Lightbar Setup](wiki/03-Lightbar-Configuration.md)
+- [Flash Patterns Library](wiki/04-Flash-Patterns-Library.md)
+- [Colours](wiki/05-Colours.md)
+- [Sirens](wiki/06-Sirens.md)
+- [Object and Bone Linking](wiki/07-Object-and-Bone-Linking.md)
+- [Useful Tools](wiki/08-Useful-Tools.md)
+- [Preview and Simulation](wiki/09-Preview-and-Simulation.md)
+- [Import and Export](wiki/10-Import-and-Export.md)
+- [Vehicle Tools](wiki/11-Car-Functions-and-Extras.md)
+- [Troubleshooting](wiki/12-Troubleshooting.md)
+- [Body Openings](wiki/13-Body-Openings.md)
+- [Asset Library](wiki/14-Asset-Library.md)
+- [Updates and Information](wiki/15-Updates-and-Information.md)
 
 ## Notes
-- The add-on is designed around GTA V non-ELS siren workflows.
-- Imported patterns and colours can be saved back into the library for reuse.
-- If Blender UI previews stop updating after large changes, use `Refresh Pattern Previews`.
-
-## Body Openings
-Use the `Body Openings` panel for bonnet, boot, hinged doors, and sliding doors.
-
-Each opening lets you:
-- assign the mesh
-- place a linked bone on the parent skeleton
-- choose hinged or sliding behavior
-- select which rotation or slide axes are active
-- capture `Closed` and `Open` states from the current manual transform
-- preview either captured state back onto the linked mesh or bone
-
-Placed body-opening bones always point toward vehicle front (`Y+`).
+- `Show All Flash Previews` only affects UI swatches. It does not limit viewport timeline preview.
+- Siren filters only affect the setup panels and shared siren preview panel.
+- If performance drops heavily while previewing, collapse preview-heavy sections and test with `Auto Rebuild` turned off.
+- For the best results with vehicle fragments, install and enable Sollumz.
