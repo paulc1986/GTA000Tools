@@ -18,18 +18,18 @@ The add-on can appear in the `GTA 000` tab, the `Tool` tab, or both depending on
 
 ### General
 - `Lightbar Setup`
-- `Simulation`
+- `Lightbar Simulation`
 - `Useful Tools`
 
 ### Vehicle
 - `Body Openings`
-- `Extra's`
+- `Extras`
 - `Lighting`
-- `Light ID's`
+- `Light IDs`
 - `Wheel Preview`
 
 ### Asset Library
-- `Asset's`
+- `Assets`
 - `Asset Details`
 
 ### Config Libraries
@@ -58,7 +58,7 @@ Sollumz is not required for the main lightbar workflow, but it is useful for som
 
 With Sollumz installed and enabled you can:
 - use `Preview Wheel Instances`
-- work with polygon `Light ID's` in a Sollumz-style workflow
+- work with polygon `Light IDs` in a Sollumz-style workflow
 - use some fragment and vehicle scene helpers more reliably
 
 If Sollumz is missing or disabled, GTA 000 Tools shows a warning and gives you an install or enable button.
@@ -71,21 +71,21 @@ If Sollumz is missing or disabled, GTA 000 Tools shows a warning and gives you a
 4. Add sirens from `Siren Actions`.
 5. Configure each siren.
 6. Link each siren to its mesh and bone.
-7. Use `Simulation` to preview the active siren or all sirens.
+7. Use `Lightbar Simulation` to preview the active siren or all sirens.
 8. Export `carcols.meta` when the setup is ready.
 
 ### Asset Library Workflow
 1. Add library roots in Preferences or in `Updates and Information > Asset Library Path`.
 2. Scan the libraries.
-3. Browse assets in `Asset Library > Asset's`.
+3. Browse assets in `Asset Library > Assets`.
 4. Use filters, view mode, and sort mode to narrow the list.
 5. `Append`, `Link`, or select an asset to inspect it in `Asset Details`.
 
 ### Vehicle Workflow
 1. Use `Vehicle > Lighting` to preview headlights, indicators, taillights, and extra lights.
-2. Use `Vehicle > Light ID's` in `Edit Mode > Face Select` to assign or select polygon Light IDs.
+2. Use `Vehicle > Light IDs` in `Edit Mode > Face Select` to assign or select polygon Light IDs.
 3. Use `Vehicle > Body Openings` to configure bonnet, boot, and door movement.
-4. Use `Vehicle > Extra's` to show or hide extras.
+4. Use `Vehicle > Extras` to show or hide extras.
 5. Use `Vehicle > Wheel Preview` if Sollumz is installed.
 
 ## Preferences
